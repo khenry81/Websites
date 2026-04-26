@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Menezes & Associates Legal Nurse Consultants — Expert medical-legal consultation bridging healthcare and the law. Over 22 years of clinical experience. East Northport, NY.">
+  <meta property="og:title" content="Menezes & Associates — Expert Legal Nurse Consulting">
+  <meta property="og:description"
+    content="Your reliable partner in navigating complex medical-legal matters. Serving attorneys and legal professionals across New York.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Menezes & Associates — Expert Legal Nurse Consulting</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'm-blue': '#0071e3',
+            'm-grey-dk': '#1d1e20',
+            'm-grey-lt': '#efefef',
+            'off-blk': '#0f1012',
+            'off-wht': '#f2f2f4',
+          },
+          fontFamily: { base: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Tokens ── */
+    :root {
+      --color-blue: #0071e3;
+      --color-greyDark: #1d1e20;
+      --color-greyLight: #efefef;
+      --color-offBlack: #0f1012;
+      --color-offWhite: #f2f2f4;
+      --color-white: #fff;
+      --font-base: 'Plus Jakarta Sans', sans-serif;
+      --header-height: 10rem;
+      --outer: 4.7961630695vw;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 10px;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-base);
+      font-size: 1.4rem;
+      font-weight: 350;
+      background-color: var(--color-greyLight);
+      color: var(--color-offBlack);
+      overscroll-behavior: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── Reveal ── */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity .75s cubic-bezier(.16, 1, .3, 1) var(--delay, 0ms),
+          transform .75s cubic-bezier(.16, 1, .3, 1) var(--delay, 0ms);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ── Layout ── */
+    .wrap {
+      padding-left: var(--outer);
+      padding-right: var(--outer);
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--outer);
+      /* Start fully transparent — fades in when scrolled */
+      background-color: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom: 1px solid transparent;
+      transition: background-color .4s ease, backdrop-filter .4s ease,
+        -webkit-backdrop-filter .4s ease, border-color .4s ease;
+    }
+
+    .site-nav.is-scrolled {
+      background-color: rgba(239, 239, 239, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0, 0, 0, .06);
+    }
+
+    /* ── Logo ── */
+    .nav-logo-link {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .nav-logo-img {
+      /* Source image is 272×159 px — display at proportional height that fits the nav */
+      height: 9rem;
+      /* 90px — comfortable legibility inside the 100px nav */
+      width: auto;
+      display: block;
+      /* Invert white logo → dark so it reads on the light hero gradient and frosted grey nav */
+      filter: invert(1);
+      transition: opacity .18s;
+    }
+
+    .nav-logo-link:hover .nav-logo-img {
+      opacity: .72;
+    }
+
+    /* On mobile, slightly smaller */
+    @media (max-width: 767px) {
+      .nav-logo-img {
+        height: 7.5rem;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 3.2rem;
+    }
+
+    .nav-links a {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-offBlack);
+      opacity: .5;
+      transition: opacity .18s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--color-white);
+      background: var(--color-blue);
+      padding: .9rem 1.8rem;
+      border-radius: .3rem;
+      transition: opacity .18s;
+    }
+
+    .nav-cta:hover {
+      opacity: .85;
+    }
+
+    /* Mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background: var(--color-offBlack);
+      transition: transform .25s, opacity .25s;
+    }
+
+    @media (max-width: 860px) {
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: var(--header-height) 0 0 0;
+      z-index: 99;
+      background-color: rgba(239, 239, 239, .97);
+      backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3.2rem;
+      padding: 4rem var(--outer);
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu a {
+      font-size: 2.2rem;
+      font-weight: 300;
+      letter-spacing: -.03em;
+      color: var(--color-offBlack);
+      opacity: .65;
+      transition: opacity .18s;
+    }
+
+    .mobile-menu a:hover {
+      opacity: 1;
+    }
+
+    .mobile-menu .mob-cta {
+      font-size: 1.5rem;
+      color: var(--color-white) !important;
+      opacity: 1 !important;
+      background: var(--color-blue);
+      padding: 1.2rem 2.4rem;
+      border-radius: .3rem;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      /* No padding-top — image fills from absolute top, behind transparent nav */
+      min-height: 100svh;
+      background-color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img-wrap {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 70% 25%;
+    }
+
+    .hero-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg,
+          rgba(255, 255, 255, 1.0) 0%,
+          rgba(255, 255, 255, .92) 30%,
+          rgba(255, 255, 255, .42) 55%,
+          rgba(255, 255, 255, .0) 72%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      /* Push text content below nav while image fills the full viewport */
+      min-height: 100svh;
+      padding-top: calc(var(--header-height) + 2rem);
+      padding-bottom: 7.2rem;
+    }
+
+    /* ── Shared labels / atoms ── */
+    .section-label {
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      opacity: .35;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--color-offBlack);
+      opacity: .5;
+      padding: .45rem 1.2rem;
+      border: 1px solid rgba(0, 0, 0, .18);
+      border-radius: 10rem;
+    }
+
+    .tag-dark {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .5);
+      padding: .45rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 10rem;
+    }
+
+    .arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--color-blue);
+      transition: gap .18s;
+    }
+
+    .arrow-link:hover {
+      gap: 1.2rem;
+    }
+
+    .arrow-link-wht {
+      color: var(--color-white);
+      border-bottom: 1px solid rgba(255, 255, 255, .4);
+      padding-bottom: .3rem;
+    }
+
+    .btn-blue {
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+      font-family: var(--font-base);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--color-white);
+      background: var(--color-blue);
+      padding: 1.4rem 2.6rem;
+      border: none;
+      border-radius: .3rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity .18s;
+    }
+
+    .btn-blue:hover {
+      opacity: .84;
+    }
+
+    .btn-outline-wht {
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+      font-family: var(--font-base);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--color-white);
+      padding: 1.4rem 2.6rem;
+      border: 1.5px solid rgba(255, 255, 255, .4);
+      border-radius: .3rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color .18s;
+    }
+
+    .btn-outline-wht:hover {
+      border-color: rgba(255, 255, 255, .9);
+    }
+
+    /* ── Service items ── */
+    .service-item {
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      padding-top: 2.8rem;
+    }
+
+    .service-item+.service-item {
+      margin-top: 2.8rem;
+    }
+
+    /* ── Stat cols ── */
+    .stat-col+.stat-col {
+      border-left: 1px solid rgba(255, 255, 255, .06);
+      padding-left: calc(var(--outer) * .8);
+    }
+
+    /* ── Display type section ── */
+    .display-giant {
+      font-size: clamp(6.8rem, 12.5vw, 17rem);
+      font-weight: 200;
+      line-height: .88;
+      letter-spacing: -.045em;
+      color: var(--color-blue);
+      user-select: none;
+    }
+
+    /* ── Tab bar ── */
+    .tab-bar {
+      display: flex;
+      border-top: 1px solid rgba(0, 0, 0, .08);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tab-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      flex-shrink: 0;
+      font-family: var(--font-base);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--color-offBlack);
+      opacity: .35;
+      padding: 1.8rem 2.8rem;
+      background: none;
+      border: none;
+      border-right: 1px solid rgba(0, 0, 0, .08);
+      cursor: pointer;
+      transition: opacity .18s;
+    }
+
+    .tab-btn:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      opacity: 1;
+    }
+
+    /* ── Why cards ── */
+    .why-card {
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      padding-top: 3.2rem;
+      padding-bottom: .8rem;
+    }
+
+    /* ── Form ── */
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+
+    .form-field label {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      font-family: var(--font-base);
+      font-size: 1.35rem;
+      font-weight: 300;
+      color: var(--color-white);
+      background: rgba(255, 255, 255, .06);
+      border: 1.5px solid rgba(255, 255, 255, .12);
+      border-radius: .3rem;
+      padding: 1.3rem 1.6rem;
+      outline: none;
+      width: 100%;
+      transition: border-color .18s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(255, 255, 255, .2);
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: rgba(0, 113, 227, .7);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 10rem;
+    }
+
+    /* ── Blue section ── */
+    .blue-section {
+      background-color: var(--color-blue);
+    }
+
+    /* ── Mobile responsive ── */
+    @media (max-width: 767px) {
+      :root {
+        --outer: 5.5vw;
+      }
+
+      /* All 2-col grids → single column */
+      .g-2col,
+      .g-services,
+      .g-approach,
+      .g-about,
+      .g-contact,
+      .g-attorney,
+      .g-approach-desc {
+        grid-template-columns: 1fr !important;
+        gap: 4rem !important;
+      }
+
+      /* Services sidebar hidden on mobile */
+      .services-sidebar {
+        display: none !important;
+      }
+
+      /* Stats: single column */
+      .g-stats {
+        grid-template-columns: 1fr !important;
+      }
+
+      .stat-col+.stat-col {
+        border-left: none !important;
+        padding-left: 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, .07) !important;
+        padding-top: 3.2rem !important;
+        margin-top: 1.6rem !important;
+      }
+
+      /* Why work: single column */
+      .g-why {
+        grid-template-columns: 1fr !important;
+      }
+
+      .why-card {
+        margin-top: 0 !important;
+      }
+
+      /* Trust strip: stack */
+      .trust-inner {
+        flex-direction: column !important;
+        gap: 2.4rem !important;
+      }
+
+      .trust-div {
+        display: none !important;
+      }
+
+      /* Form inline rows: single column */
+      .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 1.4rem !important;
+      }
+
+      /* Footer grid: 2-col on mobile */
+      .g-footer {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 3.2rem !important;
+      }
+
+      /* Display type section: shrink font */
+      .display-giant {
+        font-size: clamp(4rem, 10.5vw, 7rem) !important;
+      }
+
+      /* Approach description: stack */
+      .g-approach-desc {
+        grid-template-columns: 1fr !important;
+        gap: 3.2rem !important;
+      }
+
+      .approach-cta-wrap {
+        justify-content: flex-start !important;
+      }
+
+      /* About portrait: square crop on mobile */
+      .about-portrait {
+        aspect-ratio: 3 / 4 !important;
+      }
+
+      /* Credential badge: leave portrait, appear just below it on mobile */
+      .about-badge {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin: -5.6rem 1.6rem 0 !important;
+        padding: 1.4rem 1.8rem !important;
+        box-shadow: 0 6px 28px rgba(0, 0, 0, .1);
+      }
+
+      /* Hero: ensure text is fully visible */
+      .hero-content {
+        padding-bottom: 5.6rem;
+      }
+
+      /* Sections: tighter padding on mobile */
+      .sect-pad {
+        padding-top: 7.2rem !important;
+        padding-bottom: 7.2rem !important;
+      }
+
+      /* Nav logo: already handled by the dedicated media query above */
+
+      /* Contact info: smaller type */
+      .contact-phone {
+        font-size: 1.5rem !important;
+      }
+
+      .contact-email {
+        font-size: 1.35rem !important;
+      }
+
+      /* Credential badges: wrap freely */
+      .cred-row {
+        flex-wrap: wrap !important;
+        gap: .6rem !important;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .g-footer {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer-legal {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1.2rem !important;
+      }
+    }
+
+    /* ── Credential badge ── */
+    .cred-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: rgba(15, 16, 18, .55);
+      padding: .7rem 1.4rem;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-radius: 10rem;
+    }
+
+    .cred-badge-wht {
+      color: rgba(255, 255, 255, .5);
+      border-color: rgba(255, 255, 255, .18);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ====================================================================
+       NAVIGATION
+       ==================================================================== -->
+  <header class="site-nav" id="site-header">
+
+    <a href="./index.html" class="nav-logo-link" aria-label="Menezes &amp; Associates — Home">
+      <img src="./images/Logo_shadow_white.avif" alt="Menezes &amp; Associates Legal Nurse Consultants"
+        class="nav-logo-img">
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#why">Why Work With Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="#contact" class="nav-cta">Free Consultation</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="#why">Why Work With Us</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="mob-cta">Free Consultation</a>
+  </nav>
+
+  <main>
+
+    <!-- ====================================================================
+         HERO
+         ==================================================================== -->
+    <section class="hero" aria-label="Hero">
+
+      <div class="hero-img-wrap" aria-hidden="true">
+        <img src="./images/b6176a_ec1d0b5979354c5b90af62c418ccef4f~mv2.avif" alt="" fetchpriority="high">
+      </div>
+
+      <div class="hero-content wrap">
+        <p
+          style="font-size:1.1rem;font-weight:500;letter-spacing:.06em;color:var(--color-offBlack);opacity:.35;margin-bottom:1.8rem;">
+          Legal Nurse Consulting
+        </p>
+        <h1
+          style="font-size:clamp(3.8rem,6.4vw,7.6rem);font-weight:300;letter-spacing:-.04em;line-height:1.02;color:var(--color-offBlack);margin-bottom:2.8rem;max-width:70rem;">
+          Expert<br>Legal Nurse<br>Consulting
+        </h1>
+        <p
+          style="font-size:clamp(1.5rem,1.9vw,2rem);font-weight:300;color:rgba(15,16,18,.62);line-height:1.55;max-width:48rem;margin-bottom:3.6rem;">
+          Your reliable partner in navigating<br>complex medical-legal matters.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:1.2rem;margin-bottom:3.2rem;">
+          <a href="#contact" class="btn-blue">Schedule Free Consultation</a>
+          <a href="#services"
+            style="display:inline-flex;align-items:center;gap:.8rem;font-family:var(--font-base);font-size:1.3rem;font-weight:500;color:var(--color-offBlack);padding:1.4rem 2.6rem;border:1.5px solid rgba(0,0,0,.18);border-radius:.3rem;text-decoration:none;transition:border-color .18s;"
+            onmouseover="this.style.borderColor='rgba(0,0,0,.55)'"
+            onmouseout="this.style.borderColor='rgba(0,0,0,.18)'">View Services</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.8rem;">
+          <span class="tag">RN · BSN · CRN · CLNC</span>
+          <span class="tag">22+ Years Experience</span>
+          <span class="tag">East Northport, NY</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         MISSION / INTRO
+         ==================================================================== -->
+    <section style="background-color:var(--color-greyLight);padding:10rem 0;" aria-label="Mission">
+      <div class="wrap g-2col"
+        style="display:grid;grid-template-columns:1fr 2.2fr;gap:2.4vw;align-items:start;max-width:1800px;">
+
+        <div class="reveal">
+          <p class="section-label">Our Role</p>
+        </div>
+
+        <div class="reveal" style="--delay:80ms;">
+          <p
+            style="font-size:clamp(1.9rem,2.6vw,3.2rem);font-weight:300;line-height:1.42;letter-spacing:-.025em;color:var(--color-offBlack);margin-bottom:3.6rem;max-width:68rem;">
+            A Legal Nurse Consultant is a registered nurse with specialized training in legal matters who provides
+            <a href="#services" style="color:var(--color-blue);border-bottom:1px solid currentColor;">expert
+              consultation on medical and healthcare-related issues</a>
+            within legal contexts.
+          </p>
+          <a href="#why" class="arrow-link">
+            Why work with us <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SERVICES
+         ==================================================================== -->
+    <section id="services" style="background-color:var(--color-greyDark);padding:10rem 0;"
+      aria-labelledby="services-heading">
+      <div class="wrap g-services"
+        style="display:grid;grid-template-columns:18rem 1fr;gap:calc(2.4vw * 3);max-width:1800px;">
+
+        <nav aria-label="Service categories" class="reveal services-sidebar">
+          <ul style="display:flex;flex-direction:column;gap:2.8rem;padding-top:.4rem;">
+            <li style="font-size:1.25rem;color:rgba(255,255,255,.28);">Medical Records</li>
+            <li style="font-size:1.25rem;color:rgba(255,255,255,.28);">Expert Witnesses</li>
+            <li style="font-size:1.25rem;color:rgba(255,255,255,.28);">Trial Support</li>
+          </ul>
+        </nav>
+
+        <div class="reveal" style="--delay:80ms;">
+          <p id="services-heading"
+            style="font-size:1.3rem;font-weight:500;color:var(--color-blue);margin-bottom:4rem;letter-spacing:.01em;">
+            Popular Services</p>
+          <ul>
+
+            <li class="service-item">
+              <p
+                style="font-size:clamp(1.6rem,2.2vw,2.6rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.25;margin-bottom:1.2rem;">
+                Medical Chart Screening</p>
+              <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.7;max-width:64rem;">We meticulously
+                screen medical charts to assess merit, standards of care, damages, and causation issues — ensuring a
+                thorough and precise evaluation before you commit resources.</p>
+            </li>
+
+            <li class="service-item">
+              <p
+                style="font-size:clamp(1.6rem,2.2vw,2.6rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.25;margin-bottom:1.2rem;">
+                Expert Witness Coordination</p>
+              <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.7;max-width:64rem;">Locating
+                qualified expert witnesses and attending DME/IME examinations — providing critical support and expertise
+                for your case at every stage.</p>
+            </li>
+
+            <li class="service-item">
+              <p
+                style="font-size:clamp(1.6rem,2.2vw,2.6rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.25;margin-bottom:1.2rem;">
+                Literature &amp; Standards Integration</p>
+              <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.7;max-width:64rem;">Extensive
+                literature searches with integration of relevant standards and guidelines into your case analysis —
+                enhancing depth, accuracy, and credibility.</p>
+            </li>
+
+            <li class="service-item">
+              <p
+                style="font-size:clamp(1.6rem,2.2vw,2.6rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.25;margin-bottom:1.2rem;">
+                Medical Event Chronologies</p>
+              <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.7;max-width:64rem;">Detailed,
+                narrative-driven chronologies of medical events identifying potential defendants and critical timelines
+                to strengthen your legal strategy.</p>
+            </li>
+
+            <li class="service-item">
+              <p
+                style="font-size:clamp(1.6rem,2.2vw,2.6rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.25;margin-bottom:1.2rem;">
+                Comprehensive Written Reports</p>
+              <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.7;max-width:64rem;">Detailed reports
+                serving as invaluable study tools — assisting with interrogatories, deposition questions, and full trial
+                preparation.</p>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         NETWORK STATS
+         ==================================================================== -->
+    <section style="background-color:var(--color-offBlack);padding:8rem 0 10rem;">
+      <div class="wrap" style="max-width:1800px;">
+        <div class="g-stats"
+          style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.06);padding-top:4.8rem;">
+
+          <div class="reveal stat-col" style="padding-right:calc(var(--outer)*.8);">
+            <p class="section-label" style="color:rgba(255,255,255,.28);margin-bottom:3.6rem;">Healthcare Experience</p>
+            <p
+              style="font-size:clamp(3.2rem,4.5vw,5.6rem);font-weight:200;letter-spacing:-.05em;line-height:1;color:var(--color-white);">
+              22<sup style="font-size:.45em;vertical-align:super;font-weight:300;">+</sup></p>
+            <p style="font-size:1.2rem;color:rgba(255,255,255,.25);margin-top:2rem;line-height:1.7;">Years of
+              Clinical<br>Nursing Experience</p>
+          </div>
+
+          <div class="reveal stat-col"
+            style="--delay:80ms;padding-left:calc(var(--outer)*.8);padding-right:calc(var(--outer)*.8);">
+            <p class="section-label" style="color:rgba(255,255,255,.28);margin-bottom:3.6rem;">CLNC Network</p>
+            <p
+              style="font-size:clamp(3.2rem,4.5vw,5.6rem);font-weight:200;letter-spacing:-.05em;line-height:1;color:var(--color-white);">
+              4,000<sup style="font-size:.45em;vertical-align:super;font-weight:300;">+</sup></p>
+            <p style="font-size:1.2rem;color:rgba(255,255,255,.25);margin-top:2rem;line-height:1.7;">Certified Legal
+              Nurse<br>Consultants Nationwide</p>
+          </div>
+
+          <div class="reveal stat-col" style="--delay:160ms;padding-left:calc(var(--outer)*.8);">
+            <p class="section-label" style="color:rgba(255,255,255,.28);margin-bottom:3.6rem;">Our Guarantee</p>
+            <p
+              style="font-size:clamp(3.2rem,4.5vw,5.6rem);font-weight:200;letter-spacing:-.05em;line-height:1;color:var(--color-white);">
+              Risk<sup style="font-size:.35em;vertical-align:super;font-weight:300;">free</sup></p>
+            <p style="font-size:1.2rem;color:rgba(255,255,255,.25);margin-top:2rem;line-height:1.7;">Consultation
+              Policy<br>No Obligation</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         DISPLAY TYPE — "BRIDGING HEALTHCARE & LAW"
+         ==================================================================== -->
+    <section style="background-color:var(--color-greyLight);padding-top:8rem;" aria-label="Approach">
+
+      <div class="wrap" style="margin-bottom:3.2rem;">
+        <p class="section-label reveal">Our Approach</p>
+      </div>
+
+      <div class="wrap" style="position:relative;overflow:visible;">
+        <div class="display-giant reveal" aria-hidden="true">Bridging</div>
+
+        <div style="position:relative;display:flex;align-items:center;">
+          <div class="display-giant reveal" style="--delay:60ms;" aria-hidden="true">Health</div>
+
+          <div class="reveal"
+            style="--delay:100ms;position:relative;z-index:2;width:clamp(13rem,18vw,24rem);flex-shrink:0;margin:0 -.5rem;transform:translateY(-6%);">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80&auto=format&fit=crop"
+              alt="Medical and legal consultation" loading="lazy" width="600" height="600"
+              style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;filter:drop-shadow(0 20px 44px rgba(0,0,0,.15));">
+          </div>
+
+          <div class="display-giant reveal" style="--delay:80ms;" aria-hidden="true">care</div>
+        </div>
+
+        <div class="display-giant reveal" style="--delay:120ms;" aria-hidden="true">&amp; Law</div>
+
+        <h2 class="sr-only">Bridging Healthcare &amp; Law</h2>
+      </div>
+
+      <!-- Approach tabs -->
+      <div class="tab-bar reveal" style="margin-top:5.6rem;--delay:140ms;" role="tablist"
+        aria-label="Approach categories">
+        <button class="tab-btn active" role="tab" aria-selected="true">Medical Records</button>
+        <button class="tab-btn" role="tab" aria-selected="false">Litigation Support</button>
+        <button class="tab-btn" role="tab" aria-selected="false">Expert Witnesses</button>
+        <button class="tab-btn" role="tab" aria-selected="false">Trial Prep</button>
+        <button class="tab-btn" role="tab" aria-selected="false">Research</button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         APPROACH DESCRIPTION
+         ==================================================================== -->
+    <section style="background-color:var(--color-greyLight);padding:6.4rem 0 10rem;">
+      <div class="wrap g-approach-desc"
+        style="display:grid;grid-template-columns:1fr 1fr;gap:calc(2.4vw * 2.5);align-items:end;max-width:1800px;">
+        <p class="reveal"
+          style="font-size:clamp(1.4rem,1.75vw,1.9rem);font-weight:300;line-height:1.68;color:rgba(15,16,18,.65);max-width:55rem;">
+          Menezes &amp; Associates exists at the intersection of clinical nursing expertise and legal strategy. We
+          translate complex medical records, standards of care, and healthcare terminology into clear, actionable
+          intelligence — enabling attorneys to build stronger cases, avoid non-meritorious investments, and achieve more
+          favorable outcomes.
+        </p>
+        <div class="reveal approach-cta-wrap"
+          style="--delay:80ms;display:flex;justify-content:flex-end;align-items:flex-end;">
+          <a href="#contact" class="btn-blue">Schedule Free Consultation →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WHY WORK WITH US
+         ==================================================================== -->
+    <section id="why" style="background-color:var(--color-greyDark);padding:10rem 0;" aria-labelledby="why-heading">
+      <div class="wrap" style="max-width:1800px;">
+
+        <div
+          style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:2.4rem;margin-bottom:6.4rem;">
+          <p class="section-label" style="color:rgba(255,255,255,.28);">Why Work With Us</p>
+          <h2 id="why-heading" class="reveal"
+            style="font-size:clamp(2.6rem,3.8vw,4.8rem);font-weight:300;letter-spacing:-.035em;line-height:1.1;color:var(--color-white);max-width:56rem;">
+            Why Work With Us
+          </h2>
+        </div>
+
+        <div class="g-why" style="display:grid;grid-template-columns:repeat(2,1fr);gap:0 calc(2.4vw * 2.5);">
+
+          <div class="why-card reveal">
+            <p
+              style="font-size:1.1rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-blue);margin-bottom:1.6rem;">
+              Save Time &amp; Money</p>
+            <h3
+              style="font-size:clamp(1.8rem,2.4vw,2.8rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.2;margin-bottom:1.6rem;">
+              Affordable access<br>to healthcare expertise.</h3>
+            <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.72;max-width:44rem;">Reduce the need
+              for costly MD experts. Our services provide attorneys with targeted medical insight at a fraction of
+              traditional expert costs.</p>
+          </div>
+
+          <div class="why-card reveal" style="--delay:80ms;">
+            <p
+              style="font-size:1.1rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-blue);margin-bottom:1.6rem;">
+              Build Stronger Cases</p>
+            <h3
+              style="font-size:clamp(1.8rem,2.4vw,2.8rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.2;margin-bottom:1.6rem;">
+              Swift, precise issue<br>identification.</h3>
+            <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.72;max-width:44rem;">We rapidly
+              pinpoint and interpret medical and nursing issues in cases involving health, illness, or injury — giving
+              your legal team a decisive advantage.</p>
+          </div>
+
+          <div class="why-card reveal" style="--delay:100ms;margin-top:4rem;">
+            <p
+              style="font-size:1.1rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-blue);margin-bottom:1.6rem;">
+              Favorable Settlements</p>
+            <h3
+              style="font-size:clamp(1.8rem,2.4vw,2.8rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.2;margin-bottom:1.6rem;">
+              Stronger bargaining<br>power at the table.</h3>
+            <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.72;max-width:44rem;">Navigate
+              multifaceted healthcare with certified CLNCs. Uncover vital information to enhance your case outcomes and
+              strengthen settlement negotiations.</p>
+          </div>
+
+          <div class="why-card reveal" style="--delay:180ms;margin-top:4rem;">
+            <p
+              style="font-size:1.1rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-blue);margin-bottom:1.6rem;">
+              Cost-Effective Assessment</p>
+            <h3
+              style="font-size:clamp(1.8rem,2.4vw,2.8rem);font-weight:300;color:var(--color-white);letter-spacing:-.025em;line-height:1.2;margin-bottom:1.6rem;">
+              Screen before<br>you commit.</h3>
+            <p style="font-size:1.3rem;color:rgba(255,255,255,.38);line-height:1.72;max-width:44rem;">Avoid investing in
+              non-meritorious cases. We screen for duty, breach, damages, and causation — reducing the time expensive MD
+              experts spend on meritorious cases.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TRUST STRIP
+         ==================================================================== -->
+    <section style="background-color:var(--color-offBlack);padding:5.6rem 0;border-top:1px solid rgba(255,255,255,.05);"
+      aria-label="Trust signals">
+      <div class="wrap reveal trust-inner"
+        style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:3.2rem;max-width:1800px;">
+        <div style="display:flex;flex-direction:column;gap:.6rem;">
+          <p
+            style="font-size:1.1rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.2);">
+            Serving</p>
+          <p style="font-size:1.6rem;font-weight:300;color:rgba(255,255,255,.55);letter-spacing:-.02em;">Plaintiff &amp;
+            Defense Attorneys</p>
+        </div>
+        <div class="trust-div" style="width:1px;height:4rem;background:rgba(255,255,255,.08);flex-shrink:0;"
+          aria-hidden="true"></div>
+        <div style="display:flex;flex-direction:column;gap:.6rem;">
+          <p
+            style="font-size:1.1rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.2);">
+            Also Serving</p>
+          <p style="font-size:1.6rem;font-weight:300;color:rgba(255,255,255,.55);letter-spacing:-.02em;">Insurance
+            Companies</p>
+        </div>
+        <div class="trust-div" style="width:1px;height:4rem;background:rgba(255,255,255,.08);flex-shrink:0;"
+          aria-hidden="true"></div>
+        <div style="display:flex;flex-direction:column;gap:.6rem;">
+          <p
+            style="font-size:1.1rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.2);">
+            Member</p>
+          <p style="font-size:1.6rem;font-weight:300;color:rgba(255,255,255,.55);letter-spacing:-.02em;">NACLNC &mdash;
+            4,000+ Network</p>
+        </div>
+        <div class="trust-div" style="width:1px;height:4rem;background:rgba(255,255,255,.08);flex-shrink:0;"
+          aria-hidden="true"></div>
+        <div style="display:flex;flex-direction:column;gap:.6rem;">
+          <p
+            style="font-size:1.1rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.2);">
+            Policy</p>
+          <p style="font-size:1.6rem;font-weight:300;color:rgba(255,255,255,.55);letter-spacing:-.02em;">Risk-Free
+            Guarantee</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ABOUT NATASIA
+         ==================================================================== -->
+    <section id="about" style="background-color:var(--color-greyLight);padding:10rem 0;"
+      aria-labelledby="about-heading">
+      <div class="wrap g-about"
+        style="display:grid;grid-template-columns:1fr 1fr;gap:calc(2.4vw * 2.5);align-items:center;max-width:1800px;">
+
+        <!-- Portrait image -->
+        <div class="reveal" style="position:relative;">
+          <div class="about-portrait"
+            style="aspect-ratio:4/5;overflow:hidden;border-radius:.4rem;background:var(--color-offWhite);">
+            <img src="./images/IMG_4095.avif"
+              alt="Natasia Menezes, RN, BSN, CRN, CLNC — Founder of Menezes & Associates" loading="lazy"
+              style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          </div>
+          <!-- Floating credential badge -->
+          <div class="about-badge"
+            style="position:absolute;bottom:2.8rem;left:2.8rem;right:2.8rem;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:.4rem;padding:1.8rem 2.2rem;border:1px solid rgba(0,0,0,.07);">
+            <p
+              style="font-size:1.6rem;font-weight:500;letter-spacing:-.02em;color:var(--color-offBlack);margin-bottom:.4rem;">
+              Natasia Menezes</p>
+            <p style="font-size:1.2rem;color:var(--color-blue);font-weight:500;margin-bottom:.8rem;">RN · BSN · CRN ·
+              CLNC ·
+              Founder</p>
+            <p style="font-size:1.15rem;color:rgba(15,16,18,.45);">Member, National Alliance of Certified<br>Legal Nurse
+              Consultants</p>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="reveal" style="--delay:100ms;">
+          <p class="section-label" style="margin-bottom:2.8rem;">About Us</p>
+          <h2 id="about-heading"
+            style="font-size:clamp(2.4rem,3.2vw,4.2rem);font-weight:300;letter-spacing:-.035em;line-height:1.15;color:var(--color-offBlack);margin-bottom:3.2rem;">
+            Dedicated to providing exceptional legal nurse consulting services rooted in integrity and excellence.
+          </h2>
+          <p
+            style="font-size:1.4rem;font-weight:300;color:rgba(15,16,18,.6);line-height:1.72;margin-bottom:2.4rem;max-width:52rem;">
+            With over 22 years of extensive healthcare experience spanning long-term care, subacute care, emergency and
+            radiology nursing, Natasia Menezes is passionate about assessing medical records to ensure quality and
+            adherence to standards of care.
+          </p>
+          <p
+            style="font-size:1.4rem;font-weight:300;color:rgba(15,16,18,.6);line-height:1.72;margin-bottom:3.6rem;max-width:52rem;">
+            As a proud member of the National Alliance of Certified Legal Nurse Consultants, Menezes &amp; Associates
+            has access to a network of over 4,000 expert CLNCs across various specialties — enabling precise, tailored
+            service for every case.
+          </p>
+          <div class="cred-row" style="display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:3.2rem;">
+            <span class="cred-badge">Long-Term Care</span>
+            <span class="cred-badge">Emergency Nursing</span>
+            <span class="cred-badge">Radiology</span>
+            <span class="cred-badge">Subacute Care</span>
+          </div>
+          <a href="#contact" class="arrow-link">
+            Schedule a consultation <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCIENTIFIC CREDIBILITY (mirrors Augen "Scientific Evidence" section)
+         ==================================================================== -->
+    <section class="blue-section" style="padding:8rem 0;" aria-label="Credibility">
+      <div class="wrap reveal"
+        style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:3.2rem;max-width:1800px;">
+        <div style="display:flex;align-items:center;gap:1.6rem;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <circle cx="10" cy="10" r="9" stroke="rgba(255,255,255,.45)" stroke-width="1.5" />
+            <path d="M10 5v5.5l3.5 2" stroke="rgba(255,255,255,.45)" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <h2
+            style="font-size:clamp(2.4rem,3.6vw,4.8rem);font-weight:300;letter-spacing:-.035em;color:var(--color-white);">
+            Risk-Free Guarantee</h2>
+        </div>
+        <div>
+          <p
+            style="font-size:1.35rem;color:rgba(255,255,255,.55);line-height:1.65;max-width:42rem;margin-bottom:2.4rem;">
+            We stand behind the quality of our work. Every engagement includes our no-obligation risk-free policy.
+            Contact us for transparent, case-specific pricing.
+          </p>
+          <a href="#contact" class="arrow-link arrow-link-wht">
+            Get started today <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FREE CONSULTATION FORM
+         ==================================================================== -->
+    <section id="contact" style="background-color:var(--color-offBlack);padding:10rem 0;"
+      aria-labelledby="contact-heading">
+      <div class="wrap g-contact"
+        style="display:grid;grid-template-columns:1fr 1fr;gap:calc(2.4vw * 3);max-width:1800px;">
+
+        <!-- Contact info -->
+        <div>
+          <p class="section-label" style="color:rgba(255,255,255,.28);margin-bottom:4rem;">Get In Touch</p>
+          <h2 id="contact-heading" class="reveal"
+            style="font-size:clamp(2.8rem,4vw,5.2rem);font-weight:300;letter-spacing:-.035em;line-height:1.1;color:var(--color-white);margin-bottom:4rem;">
+            Schedule Your<br>Free Consultation<br>Today
+          </h2>
+          <div class="reveal" style="--delay:80ms;display:flex;flex-direction:column;gap:2.8rem;margin-bottom:4rem;">
+
+            <div>
+              <p
+                style="font-size:1.05rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.8rem;">
+                Phone</p>
+              <a href="tel:6312508600"
+                style="font-size:1.8rem;font-weight:300;color:var(--color-white);letter-spacing:-.02em;transition:opacity .18s;"
+                onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">631-250-8600</a>
+            </div>
+
+            <div>
+              <p
+                style="font-size:1.05rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.8rem;">
+                Email</p>
+              <a href="mailto:Info@nmenezesclnc.com"
+                style="font-size:1.6rem;font-weight:300;color:var(--color-white);letter-spacing:-.01em;transition:opacity .18s;"
+                onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">Info@nmenezesclnc.com</a>
+            </div>
+
+            <div>
+              <p
+                style="font-size:1.05rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.8rem;">
+                Office</p>
+              <address
+                style="font-style:normal;font-size:1.5rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.65;">
+                1 Hewitt Square, Suite 404<br>
+                East Northport, NY 11731
+              </address>
+            </div>ß
+
+          </div>
+
+          <div class="reveal" style="--delay:120ms;display:flex;flex-wrap:wrap;gap:.8rem;">
+            <span class="cred-badge cred-badge-wht">RN · BSN · CRN · CLNC</span>
+            <span class="cred-badge cred-badge-wht">NACLNC Member</span>
+            <span class="cred-badge cred-badge-wht">Risk-Free Policy</span>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="reveal" style="--delay:100ms;">
+          <form id="consult-form" novalidate aria-label="Free consultation request">
+            <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-bottom:1.8rem;">
+              <div class="form-field">
+                <label for="f-first">First name</label>
+                <input type="text" id="f-first" name="first" placeholder="First name" autocomplete="given-name"
+                  required>
+              </div>
+              <div class="form-field">
+                <label for="f-last">Last name</label>
+                <input type="text" id="f-last" name="last" placeholder="Last name" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-bottom:1.8rem;">
+              <div class="form-field">
+                <label for="f-phone">Phone</label>
+                <input type="tel" id="f-phone" name="phone" placeholder="(631) 000-0000" autocomplete="tel" required>
+              </div>
+              <div class="form-field">
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" name="email" placeholder="you@firm.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-field" style="margin-bottom:2.4rem;">
+              <label for="f-matter">Legal matter description</label>
+              <textarea id="f-matter" name="matter"
+                placeholder="Briefly describe the medical-legal matter you need assistance with…" required></textarea>
+            </div>
+            <button type="submit" class="btn-blue" style="width:100%;justify-content:center;padding:1.6rem;">
+              Submit — Request Free Consultation
+            </button>
+            <p style="font-size:1.1rem;color:rgba(255,255,255,.2);margin-top:1.4rem;text-align:center;line-height:1.5;">
+              Risk-free guarantee. No obligation. Contact for case-specific pricing.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ATTORNEY FOCUS / CLOSING CTA
+         ==================================================================== -->
+    <section style="background-color:var(--color-greyLight);padding:10rem 0;">
+      <div class="wrap g-attorney" style="display:grid;grid-template-columns:1fr 1fr;gap:2.4vw;max-width:1800px;">
+
+        <div class="reveal" style="border-top:1px solid rgba(0,0,0,.1);padding-top:3.6rem;">
+          <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:2.4rem;">
+            <div style="width:1.5rem;height:1.5rem;border-radius:50%;background:var(--color-blue);"></div>
+            <h2 style="font-size:clamp(2rem,2.8vw,3.4rem);font-weight:300;letter-spacing:-.03em;">For Attorneys</h2>
+          </div>
+          <p
+            style="font-size:1.35rem;font-weight:300;color:rgba(15,16,18,.58);line-height:1.72;max-width:42rem;margin-bottom:2.8rem;">
+            We serve plaintiff and defense attorneys, insurance companies, and legal professionals who need reliable,
+            expert medical insight to navigate complex healthcare-related cases.
+          </p>
+          <a href="#contact" class="arrow-link">Schedule a consultation <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="reveal" style="--delay:100ms;border-top:1px solid rgba(0,0,0,.1);padding-top:3.6rem;">
+          <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:2.4rem;">
+            <div style="width:1.5rem;height:1.5rem;border-radius:50%;background:var(--color-blue);"></div>
+            <h2 style="font-size:clamp(2rem,2.8vw,3.4rem);font-weight:300;letter-spacing:-.03em;">Our Commitment</h2>
+          </div>
+          <p
+            style="font-size:1.35rem;font-weight:300;color:rgba(15,16,18,.58);line-height:1.72;max-width:42rem;margin-bottom:2.8rem;">
+            Integrity, satisfaction, and an unwavering commitment to excellence. Every case receives the full depth of
+            22+ years of clinical nursing experience and a network of 4,000+ certified specialists.
+          </p>
+          <a href="mailto:Info@nmenezesclnc.com" class="arrow-link">Say hello <span aria-hidden="true">→</span></a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer style="background-color:var(--color-offBlack);padding:7.2rem 0 4rem;" aria-label="Site footer">
+    <div class="wrap" style="max-width:1800px;">
+
+      <div class="g-footer"
+        style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:calc(2.4vw * 2);padding-bottom:5.6rem;border-bottom:1px solid rgba(255,255,255,.05);">
+
+        <!-- Brand -->
+        <div>
+          <p
+            style="font-size:1.4rem;font-weight:500;letter-spacing:-.02em;color:rgba(255,255,255,.45);margin-bottom:.4rem;line-height:1.3;">
+            Menezes &amp; Associates</p>
+          <p style="font-size:1.1rem;color:rgba(255,255,255,.2);margin-bottom:3.2rem;">Legal Nurse Consultants</p>
+          <address style="font-style:normal;font-size:1.2rem;color:rgba(255,255,255,.22);line-height:1.8;">
+            1 Hewitt Square, Suite 404<br>East Northport, NY 11731<br>
+            <a href="tel:6312508600" style="color:rgba(255,255,255,.3);transition:color .18s;"
+              onmouseover="this.style.color='rgba(255,255,255,.7)'"
+              onmouseout="this.style.color='rgba(255,255,255,.3)'">631-250-8600</a><br>
+            <a href="mailto:Info@nmenezesclnc.com" style="color:rgba(255,255,255,.3);transition:color .18s;"
+              onmouseover="this.style.color='rgba(255,255,255,.7)'"
+              onmouseout="this.style.color='rgba(255,255,255,.3)'">Info@nmenezesclnc.com</a>
+          </address>
+        </div>
+
+        <!-- Services -->
+        <nav aria-label="Footer services">
+          <p class="section-label" style="color:rgba(255,255,255,.2);margin-bottom:2.8rem;">Services</p>
+          <ul style="display:flex;flex-direction:column;gap:1.8rem;">
+            <li><a href="#services" style="font-size:1.3rem;color:rgba(255,255,255,.32);transition:color .18s;"
+                onmouseover="this.style.color='rgba(255,255,255,.8)'"
+                onmouseout="this.style.color='rgba(255,255,255,.32)'">Medical Chart Screening</a></li>
+            <li><a href="#services" style="font-size:1.3rem;color:rgba(255,255,255,.32);transition:color .18s;"
+                onmouseover="this.style.color='rgba(255,255,255,.8)'"
+                onmouseout="this.style.color='rgba(255,255,255,.32)'">Expert Witness</a></li>
+            <li><a href="#services" style="font-size:1.3rem;color:rgba(255,255,255,.32);transition:color .18s;"
+                onmouseover="this.style.color='rgba(255,255,255,.8)'"
+                onmouseout="this.style.color='rgba(255,255,255,.32)'">Literature &amp; Standards</a></li>
+            <li><a href="#services" style="font-size:1.3rem;color:rgba(255,255,255,.32);transition:color .18s;"
+                onmouseover="this.style.color='rgba(255,255,255,.8)'"
+                onmouseout="this.style.color='rgba(255,255,255,.32)'">Written Reports</a></li>
+          </ul>
+        </nav>
+
+        <!-- Company -->
+        <nav aria-label="Footer company">
+          <p class="section-label" style="color:rgba(255,255,255,.2);margin-bottom:2.8rem;">Company</p>
+          <ul style="display:flex;flex-direction:column;gap:1.8rem;">
+            <li><a href="#about" style="font-size:1.3rem;color:rgba(255,255,255,.32);transition:color .18s;"
+                onmouseover="this.style.color='rgba(255,255,255,.8)'"
+                onmouseout="this.style.color='rgba(255,255,255,.32)'">About Us</a></li>
+            <li><a href="#why" style="font-size:1.3rem;color:rgba(255,255,255,.32);transition:color .18s;"
+                onmouseover="this.style.color='rgba(255,255,255,.8)'"
+                onmouseout="this.style.color='rgba(255,255,255,.32)'">Why Work With Us</a></li>
+            <li><a href="#contact" style="font-size:1.3rem;color:rgba(255,255,255,.32);transition:color .18s;"
+                onmouseover="this.style.color='rgba(255,255,255,.8)'"
+                onmouseout="this.style.color='rgba(255,255,255,.32)'">Free Consultation</a></li>
+          </ul>
+        </nav>
+
+        <!-- Connect -->
+        <nav aria-label="Footer connect">
+          <p class="section-label" style="color:rgba(255,255,255,.2);margin-bottom:2.8rem;">Connect</p>
+          <ul style="display:flex;flex-direction:column;gap:1.8rem;">
+            <li>
+              <a href="https://www.linkedin.com/in/natasia-menezes" target="_blank" rel="noopener noreferrer"
+                style="font-size:1.3rem;color:rgba(255,255,255,.32);transition:color .18s;"
+                onmouseover="this.style.color='rgba(255,255,255,.8)'"
+                onmouseout="this.style.color='rgba(255,255,255,.32)'">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- Bottom -->
+      <div class="footer-legal"
+        style="display:flex;align-items:center;justify-content:space-between;padding-top:3.2rem;flex-wrap:wrap;gap:2rem;">
+        <div aria-hidden="true" style="opacity:.14;">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <line x1="11" y1="1" x2="11" y2="21" stroke="white" stroke-width="1.4" />
+            <line x1="1" y1="11" x2="21" y2="11" stroke="white" stroke-width="1.4" />
+            <line x1="3.69" y1="3.69" x2="18.31" y2="18.31" stroke="white" stroke-width="1.4" />
+            <line x1="18.31" y1="3.69" x2="3.69" y2="18.31" stroke="white" stroke-width="1.4" />
+            <circle cx="11" cy="11" r="2.2" fill="white" />
+          </svg>
+        </div>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,.18);">© 2026 Menezes &amp; Associates CLNC, LLC. All rights
+          reserved.</p>
+        <nav aria-label="Legal" style="display:flex;gap:2.4rem;">
+          <a href="#" style="font-size:1.1rem;color:rgba(255,255,255,.2);transition:color .18s;"
+            onmouseover="this.style.color='rgba(255,255,255,.55)'"
+            onmouseout="this.style.color='rgba(255,255,255,.2)'">Privacy Policy</a>
+          <a href="#" style="font-size:1.1rem;color:rgba(255,255,255,.2);transition:color .18s;"
+            onmouseover="this.style.color='rgba(255,255,255,.55)'"
+            onmouseout="this.style.color='rgba(255,255,255,.2)'">Terms of Service</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       JAVASCRIPT
+       ==================================================================== -->
+  <script type="module">
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        entries => entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        }),
+        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      );
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('is-visible'));
+    }
+
+    // Nav: transparent at top, frosted on scroll
+    const header = document.getElementById('site-header');
+    const syncNav = () => header.classList.toggle('is-scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', syncNav, { passive: true });
+    syncNav(); // set correct state on load
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    const toggle = open => {
+      menuOpen = open;
+      mobileMenu.classList.toggle('open', open);
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      hamburger.setAttribute('aria-expanded', String(open));
+      const spans = hamburger.querySelectorAll('span');
+      spans[0].style.transform = open ? 'rotate(45deg) translate(4.5px,4.5px)' : '';
+      spans[1].style.opacity = open ? '0' : '';
+      spans[2].style.transform = open ? 'rotate(-45deg) translate(4.5px,-4.5px)' : '';
+    };
+    hamburger.addEventListener('click', () => toggle(!menuOpen));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
+    document.addEventListener('click', e => {
+      if (menuOpen && !header.contains(e.target) && !mobileMenu.contains(e.target)) toggle(false);
+    });
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.tab-bar').querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('active'); b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+      });
+    });
+
+    // Form submit
+    document.getElementById('consult-form')?.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const orig = btn.textContent;
+      btn.textContent = 'Thank you — we\'ll be in touch shortly.';
+      btn.disabled = true;
+      btn.style.backgroundColor = '#00b982';
+      setTimeout(() => {
+        btn.textContent = orig; btn.disabled = false;
+        btn.style.backgroundColor = '';
+        e.target.reset();
+      }, 5000);
+    });
+  </script>
+
+</body>
+
+</html>
