@@ -18,7 +18,7 @@
   --color-border:     #E5E7EB;
 
   --banner-height: 44px;
-  --nav-height: 80px;
+  --nav-height: 150px;
   --max-width: 1280px;
   --page-pad: clamp(1.5rem, 5vw, 6rem);
 }
@@ -106,7 +106,7 @@ button { cursor: pointer; border: none; background: none; }
 
 /* Scrolled: compact dark navy — logo stays perfect, text stays white */
 .site-header.scrolled {
-  height: 68px;
+  height: 110px;
   background: rgba(8, 16, 31, 0.94);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -138,28 +138,28 @@ button { cursor: pointer; border: none; background: none; }
 .nav-logo:hover { opacity: 0.82; }
 
 .nav-logo-img {
-  height: calc(var(--nav-height) * 0.72);
+  height: calc(var(--nav-height) * 0.86);
   width: auto;
   display: block;
   transition: height 0.35s ease;
-  /* subtle drop-shadow so the wing gradient pops on any bg */
-  filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.5));
+  /* drop-shadow renders against the transparent alpha, not a rectangle */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.55));
 }
 
 .site-header.scrolled .nav-logo-img {
-  height: calc(68px * 0.72);
+  height: calc(110px * 0.86);
 }
 
 /* Nav links — white throughout; dark nav on scroll keeps them legible */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   margin-left: auto;
 }
 
 .nav-links a {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
   transition: color 0.2s;
@@ -169,9 +169,9 @@ button { cursor: pointer; border: none; background: none; }
 /* Nav CTA — outlined on hero, solid blue once scrolled for contrast on dark bg */
 .nav-cta {
   flex-shrink: 0;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 500;
-  padding: 0.5rem 1.25rem;
+  padding: 0.7rem 1.75rem;
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.35);
   color: white;
@@ -661,7 +661,7 @@ button { cursor: pointer; border: none; background: none; }
 @media (max-width: 768px) {
   :root {
     --page-pad: 1.5rem;
-    --nav-height: 64px;
+    --nav-height: 90px;
     --banner-height: 52px;
   }
 
